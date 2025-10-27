@@ -24,11 +24,8 @@ echo "GATEWAY : ${GATEWAY:-unknown}"
 
 echo
 echo "=== Detecting latest RouterOS 7.x (CHR) ==="
-LATEST="$(curl -fsSL https://download.mikrotik.com/routeros/ \
-  | grep -Eo 'href=\"7\.[0-9]+(\.[0-9]+)?/' \
-  | sed -e 's/href=\"//' -e 's/\/$//' \
-  | sort -V | tail -n1 || true)"
-[[ -n "${LATEST}" ]] || { echo "Failed to detect latest 7.x version."; exit 1; }
+# === Detecting latest RouterOS 7.x (CHR) via upgrade API (no 403) ===
+LATEST="$(curl -fsSL https://upgrade.mikrotik.com/routeros/NEWESTa7.stable | awk '{print $1}')"
 DL_URL="https://download.mikrotik.com/routeros/${LATEST}/chr-${LATEST}.img.zip"
 echo "Latest version : ${LATEST}"
 echo "Download URL   : ${DL_URL}"
