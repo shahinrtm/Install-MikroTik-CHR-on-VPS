@@ -66,7 +66,7 @@ sudo apt install -y curl unzip coreutils util-linux iproute2
 
 ## 🧠 Credits
 Created by [**@shahinrtm**](https://github.com/shahinrtm)  
-Inspired by [azadrah.org](https://azadrah.org) installer concept.  
+Inspired by [azadrahorg]([https://azadrah.org](https://github.com/azadrahorg)) installer concept.  
 
 ---
 
