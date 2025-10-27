@@ -20,21 +20,14 @@ Run this command as root (or with `sudo`):
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/shahinrtm/Install-MikroTik-CHR-on-VPS/main/last_mk_install.sh)"
 ```
 
-If you want to skip the confirmation prompt, add `--force`:
-
-```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/shahinrtm/Install-MikroTik-CHR-on-VPS/main/last_mk_install.sh)" -- --force
-```
-
 ---
 
 ## 🧩 What It Does
 1. Detects your **network interface**, IP address, and gateway.  
 2. Fetches the **latest RouterOS 7.x** version automatically.  
 3. Downloads and extracts the CHR image (`.img.zip`).  
-4. Detects your **root disk** (e.g. `/dev/sda`, `/dev/nvme0n1`).  
-5. Writes the CHR image directly to the root disk using `dd`.  
-6. Performs a **hard reboot** into MikroTik RouterOS.
+4. Writes the CHR image directly to the root disk using `dd`.  
+5. Performs a **hard reboot** into MikroTik RouterOS.
 
 ---
 
@@ -48,14 +41,6 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/shahinrtm/Install-MikroT
 
 ---
 
-## 🧰 Requirements
-Make sure these packages are installed before running the script:
-```bash
-sudo apt update
-sudo apt install -y curl unzip coreutils util-linux iproute2
-```
-
----
 
 ## 🛑 Warning
 - This script **completely wipes your disk**.  
